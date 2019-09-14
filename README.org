@@ -1,0 +1,52 @@
+-*- mode: org; mode: visual-line; -*-
+#+STARTUP: indent
+
+* MIDI FIGHTER
+
+A simple library for driving the DJ Tech Tools MIDI Fighter.
+
+** Setup
+
+The factory setup of the MIDI Fighter includes some functions that should be disabled to make software control of the device as straightforward as possible. This can be done with the "MF Utility" app.
+
+- Set "button press" flash colour to black, for all 16 buttons in bank 1
+
+- Set all left and right button functions to CC only (disabling all bank select and keeping to bank 1)
+
+- (Optional) disable onboard animations like "spark"
+
+That done, the MIDI Fighter will send the following:
+
+- Main buttons: MIDI notes with pitch ~36~ to ~51~ inclusive, channel ~3~, velocities ~127~ and ~0~
+
+- Side buttons: controllers ~20~ to ~25~ inclusive, channel ~5~, values ~127~ and ~0~
+
+** LED Driving
+
+The colour settings described in the manual seem to be wrong. These are the ones we've determined by experimentation (note messages, channel ~3~):
+
+|    0-12 | nothing       |
+|   13-18 | full red      |
+|   19-24 | dull red      |
+|   25-30 | full orange   |
+|   31-36 | dull orange   |
+|   37-42 | full yellow   |
+|   43-48 | full yellow   |
+|   49-54 | full lime     |
+|   55-60 | dull lime     |
+|   61-66 | full green    |
+|   67-72 | dull green    |
+|   73-78 | full sky blue |
+|   79-84 | dull sky blue |
+|   85-90 | full blue     |
+|   91-96 | dull blue     |
+|  97-102 | full lilac    |
+| 103-108 | dull lilac    |
+| 109-114 | full pink     |
+| 115-120 | dull pink     |
+| 121-126 | full white    |
+|     127 | nothing       |
+
+** Contact
+
+Nick Rothwell, nick@cassiel.com / [[http://cassiel.com]]
